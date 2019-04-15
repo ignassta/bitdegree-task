@@ -1,6 +1,6 @@
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&subset=latin-ext');
 
 // Variables
 @import 'variables';
@@ -8,7 +8,26 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+body {
+  background-color: $bg-color;
+  color: $primary-font-color;
+  font-family: $primary-font;
+}
+
+#top-statistics {
+  padding-top: 45px;
+  
+  .top-statistics-count {
+    display: inline-block;
+    font-size: 35px;
+    font-weight: 300;
+    transform: translateY(7px);
+  }
+  .top-statistics-text {
+    display: inline-block;
+    color: $secondary-font-color;
+    font-size: 15px;
+    font-weight: 300;
+    transform: translateY(2px);
+  }
 }
