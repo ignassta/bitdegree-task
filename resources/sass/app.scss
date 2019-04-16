@@ -22,6 +22,9 @@ body {
     font-size: 30px;
     font-weight: 300;
   }
+  #main-container {
+    margin-top: 58px;
+  }
 }
 
 #top-statistics-holder {
@@ -39,9 +42,7 @@ body {
     transform: translateY(2px);
   }
 }
-#main-container {
-  margin-top: 58px;
-}
+
 #progression-holder {
   padding: 25px 25px 85px 25px;
 
@@ -92,6 +93,6 @@ body {
   }
 }
 
-#top-text-holder {
+#about-me-holder {
   padding: 50px;
 }

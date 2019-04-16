@@ -10672,6 +10672,10 @@ body h2 {
   font-weight: 300;
 }
 
+body #main-container {
+  margin-top: 58px;
+}
+
 #top-statistics-holder {
   padding-top: 45px;
 }
@@ -10689,10 +10693,6 @@ body h2 {
   font-size: 15px;
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
-}
-
-#main-container {
-  margin-top: 58px;
 }
 
 #progression-holder {
@@ -10754,7 +10754,7 @@ body h2 {
   float: right;
 }
 
-#top-text-holder {
+#about-me-holder {
   padding: 50px;
 }
 
