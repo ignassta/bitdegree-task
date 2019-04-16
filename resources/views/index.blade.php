@@ -21,6 +21,11 @@
             </progression-column>
 
         </div>
+        <div class="col-lg-7">
+            <div id="top-text-holder" class="column">
+                <p>{{ __('main.text') }}</p>
+            </div>
+        </div>
     </div>
 </div>
 
