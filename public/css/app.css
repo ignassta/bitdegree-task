@@ -10673,7 +10673,8 @@ body h2 {
 }
 
 body #main-container {
-  margin-top: 58px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 #top-statistics-holder {
@@ -10756,5 +10757,42 @@ body #main-container {
 
 #about-me-holder {
   padding: 50px;
+}
+
+#recomendations-holder {
+  margin-top: 30px;
+  padding: 25px 25px 30px 25px;
+}
+
+#recomendations-holder h2 {
+  padding-bottom: 8px;
+}
+
+#recomendations-holder #recomendations-person-holder {
+  margin-top: 50px;
+  overflow: hidden;
+}
+
+#recomendations-holder #recomendations-person-holder #recomendations-photo-holder {
+  position: absolute;
+  bottom: 20px;
+}
+
+#recomendations-holder #recomendations-person-holder #recomendations-name-holder {
+  display: inline-block;
+  background-color: #303846;
+  padding: 17px 0 17px 90px;
+  margin-left: 20px;
+  width: 100%;
+}
+
+#recomendations-holder #recomendations-person-holder #recomendations-name-holder p {
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+#recomendations-holder #recomendations-person-holder #recomendations-name-holder p:first-child {
+  font-size: 18px;
+  font-weight: 700;
 }
 

@@ -1,5 +1,5 @@
 <template>
-    <div id="top-statistics-holder" class="container">
+    <div class="container" id="top-statistics-holder">
         <div class="row">
             <div class="col-lg-4 text-right">
                 <slot name="top-statistics-left-img"></slot>
