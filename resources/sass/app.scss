@@ -12,22 +12,81 @@ body {
   background-color: $bg-color;
   color: $primary-font-color;
   font-family: $primary-font;
+  font-weight: 300;
+
+  .column {
+    background-color: $column-color;
+    border-radius: 5px;
+  }
+  h2 {
+    font-size: 30px;
+    font-weight: 300;
+  }
 }
 
-#top-statistics {
+#top-statistics-holder {
   padding-top: 45px;
   
   .top-statistics-count {
     display: inline-block;
     font-size: 35px;
-    font-weight: 300;
     transform: translateY(7px);
   }
   .top-statistics-text {
     display: inline-block;
     color: $secondary-font-color;
     font-size: 15px;
-    font-weight: 300;
     transform: translateY(2px);
+  }
+}
+
+#progression-holder {
+  margin-top: 58px;
+  padding: 25px 25px 85px 25px;
+
+  #progression-inner-holder {
+    text-align: center;
+    #progression-award-icon {
+      margin-top: 95px;
+    }
+    #progression-lvl {
+      font-weight: 500;
+      font-size: 20px;
+    }
+    #progression-xp {
+      margin-top: 65px;
+      color: $secondary-font-color;
+    }
+    #progression-rewards-holder {
+      padding: 12px 0 28px 0;
+      border-bottom: 1px solid $secondary-font-color;
+
+      img {
+        padding: 0 9px;
+      }
+    }
+    #progression-second-header {
+      padding: 20px 0 26px 0;
+    }
+    .progress {
+      clear: left;
+      background-color: #343c49;
+      border-radius: 5px;
+    }
+    .progress-bar-holder {
+      padding-bottom: 20px;
+
+      .progress-subject {
+        font-size: 20px;
+        float: left;
+      }
+      .progress-lvl {
+        transform: translateY(6px);
+        font-size: 15px;
+        color: $secondary-font-color;
+        text-transform: uppercase;
+        float: right;
+      }
+    }
   }
 }

@@ -10659,26 +10659,95 @@ body {
   background-color: #12121c;
   color: #fff;
   font-family: "Work Sans", sans-serif;
+  font-weight: 300;
 }
 
-#top-statistics {
+body .column {
+  background-color: #222b3a;
+  border-radius: 5px;
+}
+
+body h2 {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+#top-statistics-holder {
   padding-top: 45px;
 }
 
-#top-statistics .top-statistics-count {
+#top-statistics-holder .top-statistics-count {
   display: inline-block;
   font-size: 35px;
-  font-weight: 300;
   -webkit-transform: translateY(7px);
           transform: translateY(7px);
 }
 
-#top-statistics .top-statistics-text {
+#top-statistics-holder .top-statistics-text {
   display: inline-block;
   color: #616872;
   font-size: 15px;
-  font-weight: 300;
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
+}
+
+#progression-holder {
+  margin-top: 58px;
+  padding: 25px 25px 85px 25px;
+}
+
+#progression-holder #progression-inner-holder {
+  text-align: center;
+}
+
+#progression-holder #progression-inner-holder #progression-award-icon {
+  margin-top: 95px;
+}
+
+#progression-holder #progression-inner-holder #progression-lvl {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+#progression-holder #progression-inner-holder #progression-xp {
+  margin-top: 65px;
+  color: #616872;
+}
+
+#progression-holder #progression-inner-holder #progression-rewards-holder {
+  padding: 12px 0 28px 0;
+  border-bottom: 1px solid #616872;
+}
+
+#progression-holder #progression-inner-holder #progression-rewards-holder img {
+  padding: 0 9px;
+}
+
+#progression-holder #progression-inner-holder #progression-second-header {
+  padding: 20px 0 26px 0;
+}
+
+#progression-holder #progression-inner-holder .progress {
+  clear: left;
+  background-color: #343c49;
+  border-radius: 5px;
+}
+
+#progression-holder #progression-inner-holder .progress-bar-holder {
+  padding-bottom: 20px;
+}
+
+#progression-holder #progression-inner-holder .progress-bar-holder .progress-subject {
+  font-size: 20px;
+  float: left;
+}
+
+#progression-holder #progression-inner-holder .progress-bar-holder .progress-lvl {
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  font-size: 15px;
+  color: #616872;
+  text-transform: uppercase;
+  float: right;
 }
 
