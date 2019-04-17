@@ -1865,6 +1865,14 @@ __webpack_require__.r(__webpack_exports__);
         title: 'Blender Tutorial: How to Master Blender Animation & 3D Game Modeling',
         userName: 'Mark Price',
         date: '2019-02-10'
+      }, {
+        title: 'Blender Tutorial: How to Master Blender Animation & 3D Game Modeling',
+        userName: 'Mark Price',
+        date: '2019-02-10'
+      }, {
+        title: 'Blender Tutorial: How to Master Blender Animation & 3D Game Modeling',
+        userName: 'Mark Price',
+        date: '2019-02-10'
       }]
     };
   }
@@ -37463,7 +37471,7 @@ var render = function() {
         2
       ),
       _vm._v(" "),
-      _vm._l(_vm.certificates, function(certificate) {
+      _vm._l(_vm.certificates.slice(0, 4), function(certificate) {
         return _c(
           "div",
           {
