@@ -46,6 +46,16 @@
                     </certificate-component>
                     
                 </div>
+                <div class="col-12">
+
+                    <earned-certificates-component>
+                        <template slot="earned-certificates-header">{{ __('Certificates Earned') }}</template>
+                        <img slot="earned-certificate-left-img" src="images/olive-branches-icon.png" alt="">
+                        <template slot="download-certificate-btn-text">{{ __('Download') }}</template>
+                        <template slot="show-all-btn-text">{{ __('See All Certificates') }}</template>
+                    </earned-certificates-component>
+
+                </div>
             </div>
         </div>
     </div>
