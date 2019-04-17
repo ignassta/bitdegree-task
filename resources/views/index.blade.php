@@ -37,6 +37,15 @@
                     <about-me-component></about-me-component>
 
                 </div>
+                <div class="col-12">
+
+                    <certificate-component>
+                        <img id="certificates-medal" slot="certificates-medal" src="images/purple-medal-icon.png" alt="">
+                        <template slot="certificates-count-text">{{ __('Certificates Earned') }}</template>
+                        <template slot="featured-certificate-header">{{ __('Featured Certificate') }}</template>
+                    </certificate-component>
+                    
+                </div>
             </div>
         </div>
     </div>

@@ -10796,3 +10796,34 @@ body #main-container {
   font-weight: 700;
 }
 
+#featured-certificate-holder {
+  margin-top: 30px;
+  padding: 38px 25px 40px 25px;
+  text-align: center;
+}
+
+#featured-certificate-holder #certificates-medal-holder #certificates-medal {
+  display: inline-block;
+  -webkit-transform: translateY(-17px);
+          transform: translateY(-17px);
+}
+
+#featured-certificate-holder #certificates-medal-holder #certificates-count {
+  display: inline-block;
+  line-height: 1;
+  font-size: 68px;
+  padding-bottom: 10px;
+}
+
+#featured-certificate-holder #certificates-count-text {
+  font-size: 18px;
+  color: #616872;
+  border-bottom: 1px solid #616872;
+  padding-bottom: 27px;
+}
+
+#featured-certificate-holder #featured-certificate-header {
+  font-size: 18px;
+  padding: 32px 0 28px 0;
+}
+
