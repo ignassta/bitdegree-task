@@ -15,7 +15,7 @@
             <div class="col-xl-4 download-btn-holder d-flex align-items-center justify-content-end">
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <button type="button" class="btn btn-secondary"><slot name="download-certificate-btn-text"></slot></button>
-                    <button type="button" class="btn btn-secondary"><img src="images/download-icon.png" alt=""></button>
+                    <button type="button" class="btn btn-secondary"><img src="/images/download-icon.png" alt=""></button>
                 </div>
             </div>
         </div>

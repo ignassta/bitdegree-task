@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function index() {
-        return view('index');
+
+        $id = 1;
+
+        return redirect()->route('user.show', ['id' => $id]);
     }
 }

@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'IndexController@index')->name('index');
+Route::get('user/{id}', 'UserController@show')->name('user.show');

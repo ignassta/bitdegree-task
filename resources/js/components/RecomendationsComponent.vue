@@ -18,7 +18,7 @@ export default {
         return {
             header: 'Lorem ipsum dolor sit amet, consectetuer',
             text: 'consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.',
-            photo: 'images/man-photo.png',
+            photo: '/images/man-photo.png',
             name: 'John Smith',
             position: 'Instructor'
         }

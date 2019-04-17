@@ -32,10 +32,10 @@ export default {
             progressionXpForNextLvl: '500',
             
             rewards: [
-                {reward: 'images/crown-icon.png'},
-                {reward: 'images/silver-medal-icon.png'},
-                {reward: 'images/bronze-medal-icon.png'},
-                {reward: 'images/golden-medal-icon.png'}
+                {reward: '/images/crown-icon.png'},
+                {reward: '/images/silver-medal-icon.png'},
+                {reward: '/images/bronze-medal-icon.png'},
+                {reward: '/images/golden-medal-icon.png'}
             ],
             progresses: [
                 {subject: 'Java', progress: '48', level: 'level'},

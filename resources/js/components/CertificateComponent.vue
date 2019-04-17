@@ -6,7 +6,7 @@
         </div>
         <div id="certificates-count-text"><slot name="certificates-count-text"></slot></div>
         <div id="featured-certificate-header"><slot name="featured-certificate-header"></slot></div>
-        <img id="featured-certificate-img" src="images/certificate-img.jpg" alt="">
+        <img id="featured-certificate-img" src="/images/certificate-img.jpg" alt="">
     </div>
 </template>
 

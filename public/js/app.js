@@ -1921,13 +1921,13 @@ __webpack_require__.r(__webpack_exports__);
       progressionXp: '235',
       progressionXpForNextLvl: '500',
       rewards: [{
-        reward: 'images/crown-icon.png'
+        reward: '/images/crown-icon.png'
       }, {
-        reward: 'images/silver-medal-icon.png'
+        reward: '/images/silver-medal-icon.png'
       }, {
-        reward: 'images/bronze-medal-icon.png'
+        reward: '/images/bronze-medal-icon.png'
       }, {
-        reward: 'images/golden-medal-icon.png'
+        reward: '/images/golden-medal-icon.png'
       }],
       progresses: [{
         subject: 'Java',
@@ -1995,7 +1995,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       header: 'Lorem ipsum dolor sit amet, consectetuer',
       text: 'consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.',
-      photo: 'images/man-photo.png',
+      photo: '/images/man-photo.png',
       name: 'John Smith',
       position: 'Instructor'
     };
@@ -37398,7 +37398,7 @@ var render = function() {
       _c("img", {
         attrs: {
           id: "featured-certificate-img",
-          src: "images/certificate-img.jpg",
+          src: "/images/certificate-img.jpg",
           alt: ""
         }
       })
@@ -37532,7 +37532,7 @@ var staticRenderFns = [
     return _c(
       "button",
       { staticClass: "btn btn-secondary", attrs: { type: "button" } },
-      [_c("img", { attrs: { src: "images/download-icon.png", alt: "" } })]
+      [_c("img", { attrs: { src: "/images/download-icon.png", alt: "" } })]
     )
   }
 ]
@@ -50472,8 +50472,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Ampps\www\bitdegree-task\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Ampps\www\bitdegree-task\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/bitdegree-task/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/bitdegree-task/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
