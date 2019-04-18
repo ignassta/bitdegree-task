@@ -1,60 +1,112 @@
 @extends('layouts.main-layout')
 @section('content')
 
-    <top-statistics-component>
-        <img slot="top-statistics-left-img" src="{{ asset('images/purple-medal-icon.png') }}">
-        <div class="top-statistics-text" slot="top-statistics-left-text">{{ __('Certificates Earned') }}</div>
-        <img slot="top-statistics-middle-img" src="{{ asset('images/green-book-icon.png') }}">
-        <div class="top-statistics-text" slot="top-statistics-middle-text">{{ __('Courses Completed') }}</div>
-        <img slot="top-statistics-right-img" src="{{ asset('images/golden-clock-icon.png') }}">
-        <div class="top-statistics-text" slot="top-statistics-right-text">{{ __('Hours Spent Studying') }}</div>
-    </top-statistics-component>
-
+<div class="container" id="top-statistics-holder">
+    <div class="row">
+        <div class="col-lg-4 text-right">
+            <img src="{{ asset('images/purple-medal-icon.png') }}" alt="">
+            <div class="top-statistics-count">85</div>
+            <div class="top-statistics-text">{{ __('Certificates Earned') }}</div>
+        </div>
+        <div class="col-lg-4 text-center">
+            <img  src="{{ asset('images/green-book-icon.png') }}" alt="">
+            <div class="top-statistics-count">18</div>
+            <div class="top-statistics-text">{{ __('Courses Completed') }}</div>
+        </div>
+        <div class="col-lg-4 text-left">
+            <img src="{{ asset('images/golden-clock-icon.png') }}" alt="">
+            <div class="top-statistics-count">126</div>
+            <div class="top-statistics-text">{{ __('Hours Spent Studying') }}</div>
+        </div>
+    </div>
+</div>
 <div class="container" id="main-container">
     <div class="row">
         <div class="col-lg-5">
             <div class="row">
                 <div class="col-12">
-
-                    <progression-component>
-                        <template slot="progression-header">{{ __('Progression') }}</template>
-                        <img id="progression-award-icon" slot="progression-award-icon" src="{{ asset('images/golden-award-icon.png') }}">
-                        <template slot="progression-second-header">{{ __('Mastered On BitDegree') }}</template>
-                    </progression-component>
-
+                    <div class="column" id="progression-holder">
+                        <h2>{{ __('Progression') }}</h2>
+                        <div id="progression-inner-holder">
+                            <img id="progression-award-icon" src="{{ asset('images/golden-award-icon.png') }}" alt="">
+                            <p id="progression-lvl">Level 14</p>
+                            <p id="progression-xp">235 / 500 XP</p>
+                            <div id="progression-rewards-holder">
+                                <img src="{{ asset('images/crown-icon.png') }}" alt="">
+                                <img src="{{ asset('images/silver-medal-icon.png') }}" alt="">
+                                <img src="{{ asset('images/bronze-medal-icon.png') }}" alt="">
+                                <img src="{{ asset('images/golden-medal-icon.png') }}" alt="">
+                            </div>
+                            <h2 id="progression-second-header">{{ __('Mastered On BitDegree') }}</h2>
+                            <div class="progress-bar-holder">
+                                <div class="progress-subject">PHP</div>
+                                <div class="progress-lvl">Medium</div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-12">
-
-                    <recomendations-component></recomendations-component>
-
+                    <div id="recomendations-holder" class="column">
+                        <h2>"Lorem ipsum dolor sit amet, consectetuer</h2>
+                        <p>consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."</p>
+                        <div id="recomendations-person-holder">
+                            <img id="recomendations-photo-holder" src="{{asset('images/man-photo.png')}}" alt="">
+                            <div id="recomendations-name-holder">
+                                <p>John Smith</p>
+                                <p>Instructor</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-lg-7">
             <div class="row">
                 <div class="col-12">
-
-                    <about-me-component></about-me-component>
-
+                    <div class="column" id="about-me-holder">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis dui luctus, varius lorem non, efficitur quam. Nulla in diam rutrum, molestie tellus a, tristique sapien. Etiam sollicitudin metus eu justo condimentum, eget mattis turpis scelerisque.</p>
+                    </div>
                 </div>
                 <div class="col-12">
-
-                    <certificate-component>
-                        <img id="certificates-medal" slot="certificates-medal" src="{{ asset('images/purple-medal-icon.png') }}" alt="">
-                        <template slot="certificates-count-text">{{ __('Certificates Earned') }}</template>
-                        <template slot="featured-certificate-header">{{ __('Featured Certificate') }}</template>
-                    </certificate-component>
-                    
+                    <div id="featured-certificate-holder" class="column">
+                        <div id="certificates-medal-holder">
+                            <img id="certificates-medal" src="{{ asset('images/purple-medal-icon.png') }}" alt="">
+                            <div id="certificates-count">18</div>
+                        </div>
+                        <div id="certificates-count-text">{{ __('Certificates Earned') }}</div>
+                        <div id="featured-certificate-header">{{ __('Featured Certificate') }}</div>
+                        <img id="featured-certificate-img" src="{{ asset('images/certificate-img.jpg') }}" alt="">
+                    </div>
                 </div>
                 <div class="col-12">
-
-                    <earned-certificates-component>
-                        <template slot="earned-certificates-header">{{ __('Certificates Earned') }}</template>
-                        <img slot="earned-certificate-left-img" src="{{ asset('images/olive-branches-icon.png') }}" alt="">
-                        <template slot="download-certificate-btn-text">{{ __('Download') }}</template>
-                        <template slot="show-all-btn-text">{{ __('See All Certificates') }}</template>
-                    </earned-certificates-component>
-
+                    <div id="earned-certificates-holder">
+                        <h2 id="earned-certificates-header">{{ __('Certificates Earned') }}</h2>
+                        <div id="earned-certificates-inner-holder" class="row column">
+                            <div class="col-2 earned-certificate-left-img-holder d-flex align-items-center justify-content-center">
+                                <img src="{{ asset('images/olive-branches-icon.png') }}" alt="">
+                            </div>
+                            <div class="col-xl-6 col-10 earned-certificate-title-holder">
+                                <p>Blender Tutorial: How to Master Blender Animation & 3D Game Modeling</p>
+                                <div class="certificate-info">
+                                    <span><i class="fa fa-user"></i>Mark Price</span>
+                                    <span><i class="fa fa-calendar"></i>2019-02-10</span>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 download-btn-holder d-flex align-items-center justify-content-end">
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-secondary">{{ __('Download') }}</button>
+                                    <button type="button" class="btn btn-secondary"><img src="{{ asset('images/download-icon.png') }}" alt=""></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button id="show-all-btn">{{ __('See All Certificates') }}</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

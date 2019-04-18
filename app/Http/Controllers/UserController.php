@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public function show($id)
     {
-        return view('index');
+        $user = User::findOrFail($id);
+
+        return view('index', ['user' => $user]);
     }
 }
