@@ -13,7 +13,7 @@ class UserController extends Controller
         $coursesCount = $user->courses->count();
         $coursesDurationSum = round($user->courses->sum('duration') / 3600);
 
-        //return $sum;
+//        dd($user->courses->first()->group);
 
         return view('index', compact('user','coursesCount', 'coursesDurationSum'));
     }

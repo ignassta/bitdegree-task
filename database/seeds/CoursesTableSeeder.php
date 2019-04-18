@@ -1,5 +1,7 @@
 <?php
 
+use App\Course;
+use App\Group;
 use Illuminate\Database\Seeder;
 
 class CoursesTableSeeder extends Seeder
@@ -11,14 +13,15 @@ class CoursesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Course::class, 10)->create();
+        factory(Course::class, 30)->create();
+
+        $courses = Course::all();
 
         //course_user pivot table seeder
-        $courses = App\Course::all();
         App\User::all()->each(function ($user) use ($courses) { 
             $user->courses()
-            ->attach($courses->random(rand(1, 10))
-            ->pluck('id')->toArray()
+                ->attach($courses->random(rand(1, 10))
+                ->pluck('id')->toArray()
             ); 
         });
     }
