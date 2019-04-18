@@ -10,7 +10,11 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
+        $coursesCount = $user->courses->count();
+        $coursesDurationSum = round($user->courses->sum('duration') / 3600);
 
-        return view('index', ['user' => $user]);
+        //return $sum;
+
+        return view('index', compact('user','coursesCount', 'coursesDurationSum'));
     }
 }

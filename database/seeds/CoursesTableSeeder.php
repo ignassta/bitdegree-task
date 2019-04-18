@@ -17,7 +17,7 @@ class CoursesTableSeeder extends Seeder
         $courses = App\Course::all();
         App\User::all()->each(function ($user) use ($courses) { 
             $user->courses()
-            ->attach($courses->random(rand(1, 3))
+            ->attach($courses->random(rand(1, 10))
             ->pluck('id')->toArray()
             ); 
         });

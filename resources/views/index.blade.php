@@ -4,18 +4,18 @@
 <div class="container" id="top-statistics-holder">
     <div class="row">
         <div class="col-lg-4 text-right">
+            <img  src="{{ asset('images/green-book-icon.png') }}" alt="">
+            <div class="top-statistics-count">{{ $coursesCount }}</div>
+            <div class="top-statistics-text">{{ __('Courses Completed') }}</div>
+        </div>
+        <div class="col-lg-4 text-center">
             <img src="{{ asset('images/purple-medal-icon.png') }}" alt="">
             <div class="top-statistics-count">85</div>
             <div class="top-statistics-text">{{ __('Certificates Earned') }}</div>
         </div>
-        <div class="col-lg-4 text-center">
-            <img  src="{{ asset('images/green-book-icon.png') }}" alt="">
-            <div class="top-statistics-count">18</div>
-            <div class="top-statistics-text">{{ __('Courses Completed') }}</div>
-        </div>
         <div class="col-lg-4 text-left">
             <img src="{{ asset('images/golden-clock-icon.png') }}" alt="">
-            <div class="top-statistics-count">126</div>
+            <div class="top-statistics-count">{{ $coursesDurationSum }}</div>
             <div class="top-statistics-text">{{ __('Hours Spent Studying') }}</div>
         </div>
     </div>
@@ -68,14 +68,14 @@
             <div class="row">
                 <div class="col-12">
                     <div class="column" id="about-me-holder">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis dui luctus, varius lorem non, efficitur quam. Nulla in diam rutrum, molestie tellus a, tristique sapien. Etiam sollicitudin metus eu justo condimentum, eget mattis turpis scelerisque.</p>
+                        <p>{{ $user->about }}</p>
                     </div>
                 </div>
                 <div class="col-12">
                     <div id="featured-certificate-holder" class="column">
                         <div id="certificates-medal-holder">
                             <img id="certificates-medal" src="{{ asset('images/purple-medal-icon.png') }}" alt="">
-                            <div id="certificates-count">18</div>
+                            <div id="certificates-count">{{ $coursesCount }}</div>
                         </div>
                         <div id="certificates-count-text">{{ __('Certificates Earned') }}</div>
                         <div id="featured-certificate-header">{{ __('Featured Certificate') }}</div>
@@ -92,7 +92,7 @@
                             <div class="col-xl-6 col-10 earned-certificate-title-holder">
                                 <p>Blender Tutorial: How to Master Blender Animation & 3D Game Modeling</p>
                                 <div class="certificate-info">
-                                    <span><i class="fa fa-user"></i>Mark Price</span>
+                                    <span><i class="fa fa-user"></i>{{ $user->name }}</span>
                                     <span><i class="fa fa-calendar"></i>2019-02-10</span>
                                 </div>
                             </div>
