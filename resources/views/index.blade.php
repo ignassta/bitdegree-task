@@ -45,7 +45,9 @@
                                 <div class="progress-subject">{{ $userGroupWithCompRatio['group-title'] }}</div>
                                 <div class="progress-lvl">{{ group_completion_to_words($userGroupWithCompRatio['completion-ratio']) }}</div>
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: {{ $userGroupWithCompRatio['completion-ratio'] }}%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" role="progressbar"
+                                         style="width: {{ $userGroupWithCompRatio['completion-ratio'] }}%; background-color: {{ random_color() }};"
+                                         aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                                     </div>
                                 </div>
 

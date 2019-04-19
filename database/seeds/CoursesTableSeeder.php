@@ -20,7 +20,7 @@ class CoursesTableSeeder extends Seeder
         //course_user pivot table seeder
         App\User::all()->each(function ($user) use ($courses) { 
             $user->courses()
-                ->attach($courses->random(rand(1, 10))
+                ->attach($courses->random(rand(5, 20))
                 ->pluck('id')->toArray()
             ); 
         });
