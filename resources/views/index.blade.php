@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-4 text-right">
             <img  src="{{ asset('images/green-book-icon.png') }}" alt="">
-            <div class="top-statistics-count">{{ $coursesCount }}</div>
+            <div class="top-statistics-count">{{ $userCoursesCount }}</div>
             <div class="top-statistics-text">{{ __('Courses Completed') }}</div>
         </div>
         <div class="col-lg-4 text-center">
@@ -75,7 +75,7 @@
                     <div id="featured-certificate-holder" class="column">
                         <div id="certificates-medal-holder">
                             <img id="certificates-medal" src="{{ asset('images/purple-medal-icon.png') }}" alt="">
-                            <div id="certificates-count">{{ $coursesCount }}</div>
+                            <div id="certificates-count">18</div>
                         </div>
                         <div id="certificates-count-text">{{ __('Certificates Earned') }}</div>
                         <div id="featured-certificate-header">{{ __('Featured Certificate') }}</div>
