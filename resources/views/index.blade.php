@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-4 text-right">
             <img  src="{{ asset('images/green-book-icon.png') }}" alt="">
-            <div class="top-statistics-count">{{ $userCoursesCount }}</div>
+            <div class="top-statistics-count">{{ $coursesTotal }}</div>
             <div class="top-statistics-text">{{ __('Courses Completed') }}</div>
         </div>
         <div class="col-lg-4 text-center">
@@ -39,12 +39,18 @@
                             </div>
                             <h2 id="progression-second-header">{{ __('Mastered On BitDegree') }}</h2>
                             <div class="progress-bar-holder">
-                                <div class="progress-subject">PHP</div>
+
+                                @foreach($userGroupsWithCompRatio as $userGroupWithCompRatio)
+
+                                <div class="progress-subject">{{ $userGroupWithCompRatio['group-title'] }}</div>
                                 <div class="progress-lvl">Medium</div>
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" role="progressbar" style="width: {{ $userGroupWithCompRatio['completion-ratio'] }}%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                                     </div>
                                 </div>
+
+                                @endforeach
+
                             </div>
                         </div>
                     </div>

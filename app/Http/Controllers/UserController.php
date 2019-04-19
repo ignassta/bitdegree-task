@@ -25,13 +25,14 @@ class UserController extends Controller
         }
         $userGroups = array_count_values($userGroups);
 
-        //add total number of courses for every group that user had courses in
-        $userGroupsWithTotal = [];
-        foreach ($userGroups as $title => $coursesCount) {
-            $groupCoursesTotal = $groups->where('title', $title)->first()->courses->count();
-            $userGroupsWithTotal[] = ['title' => $title, 'finished-courses' => $coursesCount, 'total-courses' => $groupCoursesTotal];
+        //count group completion ratio and merge it with group title in array
+        $userGroupsWithCompRatio = [];
+        foreach ($userGroups as $groupTitle => $finishedCourses) {
+            $groupCoursesTotal = $groups->where('title', $groupTitle)->first()->courses->count();
+            $groupCompletionRatio = round($finishedCourses * 100 / $groupCoursesTotal);
+            $userGroupsWithCompRatio[] = ['group-title' => $groupTitle, 'completion-ratio' => $groupCompletionRatio];
         }
 
-        return view('index', compact('user','coursesTotal', 'coursesDurationSum', 'userGroupsWithTotal'));
+        return view('index', compact('user','coursesTotal', 'coursesDurationSum', 'userGroupsWithCompRatio'));
     }
 }
