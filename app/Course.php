@@ -15,4 +15,9 @@ class Course extends Model
     {
         return $this->belongsTo('App\Group');
     }
+
+    public function lecturer()
+    {
+        return $this->belongsTo('App\Lecturer');
+    }
 }
