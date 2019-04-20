@@ -17,6 +17,7 @@ class CreateLecturersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name')->nullable();
             $table->string('profession')->nullable();
+            $table->text('quote_title')->nullable();
             $table->text('quote')->nullable();
             $table->string('photo')->nullable();
             $table->timestamps();

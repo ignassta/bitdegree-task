@@ -59,13 +59,13 @@
                 </div>
                 <div class="col-12">
                     <div id="recomendations-holder" class="column">
-                        <h2>"Lorem ipsum dolor sit amet, consectetuer</h2>
-                        <p>consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."</p>
+                        <h2>"{{ $usersRandomLecturer->quote_title }}</h2>
+                        <p>{{ $usersRandomLecturer->quote }}"</p>
                         <div id="recomendations-person-holder">
                             <img id="recomendations-photo-holder" src="{{asset('images/man-photo.png')}}" alt="">
                             <div id="recomendations-name-holder">
-                                <p>John Smith</p>
-                                <p>Instructor</p>
+                                <p>{{ $usersRandomLecturer->name }}</p>
+                                <p>{{ $usersRandomLecturer->profession }}</p>
                             </div>
                         </div>
                     </div>
