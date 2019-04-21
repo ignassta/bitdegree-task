@@ -161,6 +161,9 @@ body {
     font-size: 18px;
     padding: 32px 0 28px 0;
   }
+  #featured-certificate-img {
+    max-width: 440px;
+  }
 }
 
 #earned-certificates-holder {
@@ -170,45 +173,44 @@ body {
   }
   #earned-certificates-inner-holder {
     margin: 0 0 10px 0;
+  }
+  .earned-certificate-left-img-holder {
+    border-right: 1px solid $secondary-font-color;
+  }
+  .earned-certificate-title-holder {
+    padding: 10px 0 10px 15px;
 
-    .earned-certificate-left-img-holder {
-      border-right: 1px solid $secondary-font-color;
+    p {
+      margin-bottom: 7px;
+      line-height: 1.1;
     }
-    .earned-certificate-title-holder {
-      padding: 10px 0 10px 15px;
-      
-      p {
-        margin-bottom: 7px;
-        line-height: 1.1;
-      }
-      .certificate-info {
-        color: $secondary-font-color;
-        font-size: 12px;
+    .certificate-info {
+      color: $secondary-font-color;
+      font-size: 12px;
 
-        span i {
-          font-size: 14px;
-          padding-right: 5px;
-        }
-        span:first-child {
-          padding-right: 10px;
-        }
+      span i {
+        font-size: 14px;
+        padding-right: 5px;
+      }
+      span:first-child {
+        padding-right: 10px;
       }
     }
-    .download-btn-holder {
-      
-      button:nth-child(1) {
-        border: none;
-        font-weight: 500;
-        background-color: #02bb8c;
+  }
+  .download-btn-holder, .download-btn-holder-mob {
 
-        &:hover {
-          background-color: #29cea2;
-        }
-      }
-      button:nth-child(2) {
-        border: none;
+    button:nth-child(1) {
+      border: none;
+      font-weight: 500;
+      background-color: #02bb8c;
+
+      &:hover {
         background-color: #29cea2;
       }
+    }
+    button:nth-child(2) {
+      border: none;
+      background-color: #29cea2;
     }
   }
   #show-all-btn {
@@ -222,6 +224,40 @@ body {
 
     &:hover {
       opacity: .7;
+    }
+  }
+  .download-btn-holder-mob {
+    display: none!important;
+  }
+}
+
+@media (max-width: 576px) {
+
+}
+
+@media (max-width: 768px) {
+
+  #featured-certificate-holder {
+
+    #featured-certificate-img {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 1200px) {
+
+  #earned-certificates-holder {
+
+    .download-btn-holder {
+      display: none!important;
+    }
+    .download-btn-holder-mob {
+      display: flex!important;
     }
   }
 }

@@ -114,6 +114,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-12 download-btn-holder-mob d-flex align-items-center justify-content-center">
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-secondary">{{ __('Download') }}</button>
+                                    <button type="button" class="btn btn-secondary"><img src="{{ asset('images/download-icon.png') }}" alt=""></button>
+                                </div>
+                            </div>
+                        </div>
                         <div class="text-center">
                             <button id="show-all-btn">{{ __('See All Certificates') }}</button>
                         </div>
