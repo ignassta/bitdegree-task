@@ -13,8 +13,16 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $userCourses = $user->courses;
         $groups = Group::all();
+
         $coursesTotal = $userCourses->count();
         $cerfiticatesTotal = $userCourses->where('certificate', 1)->count();
+        $coursesDurationSum = round($userCourses->sum('duration') / 3600);
+
+        $coursesStats = [
+            'courses_total' => $coursesTotal,
+            'certificates_total' => $cerfiticatesTotal,
+            'courses_duration_sum' => $coursesDurationSum
+        ];
 
         //define xp base to control xp ratio rise for each lvl
         define('XP_BASE', 20);
@@ -33,9 +41,6 @@ class UserController extends Controller
         }
 
         $xpStats = ['lvl' => $lvl, 'current_xp' => $currentXp, 'xp_to_lvl_up' => $xpToLvlUp];
-
-        //seconds to hours
-        $coursesDurationSum = round($userCourses->sum('duration') / 3600);
 
         //get random lecturer that has at least one course viewed by this user
         $randomCourseIndex = rand(0, $coursesTotal-1);
@@ -58,6 +63,6 @@ class UserController extends Controller
         }
 
         return view('index',
-            compact('user','coursesTotal', 'cerfiticatesTotal', 'coursesDurationSum', 'userGroupsWithCompRatio', 'usersRandomLecturer', 'xpStats'));
+            compact('user','coursesStats', 'userGroupsWithCompRatio', 'usersRandomLecturer', 'xpStats'));
     }
 }

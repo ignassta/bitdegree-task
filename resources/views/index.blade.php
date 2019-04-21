@@ -5,17 +5,17 @@
     <div class="row">
         <div class="col-lg-4 text-right">
             <img  src="{{ asset('images/green-book-icon.png') }}" alt="">
-            <div class="top-statistics-count">{{ $coursesTotal }}</div>
+            <div class="top-statistics-count">{{ $coursesStats['courses_total'] }}</div>
             <div class="top-statistics-text">{{ __('Courses Completed') }}</div>
         </div>
         <div class="col-lg-4 text-center">
             <img src="{{ asset('images/purple-medal-icon.png') }}" alt="">
-            <div class="top-statistics-count">{{ $cerfiticatesTotal }}</div>
+            <div class="top-statistics-count">{{ $coursesStats['certificates_total'] }}</div>
             <div class="top-statistics-text">{{ __('Certificates Earned') }}</div>
         </div>
         <div class="col-lg-4 text-left">
             <img src="{{ asset('images/golden-clock-icon.png') }}" alt="">
-            <div class="top-statistics-count">{{ $coursesDurationSum }}</div>
+            <div class="top-statistics-count">{{ $coursesStats['courses_duration_sum'] }}</div>
             <div class="top-statistics-text">{{ __('Hours Spent Studying') }}</div>
         </div>
     </div>
@@ -83,7 +83,7 @@
                     <div id="featured-certificate-holder" class="column">
                         <div id="certificates-medal-holder">
                             <img id="certificates-medal" src="{{ asset('images/purple-medal-icon.png') }}" alt="">
-                            <div id="certificates-count">{{ $cerfiticatesTotal }}</div>
+                            <div id="certificates-count">{{ $coursesStats['certificates_total'] }}</div>
                         </div>
                         <div id="certificates-count-text">{{ __('Certificates Earned') }}</div>
                         <div id="featured-certificate-header">{{ __('Featured Certificate') }}</div>
