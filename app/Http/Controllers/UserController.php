@@ -16,6 +16,8 @@ class UserController extends Controller
 
         $coursesTotal = $userCourses->count();
         $cerfiticatesTotal = $userCourses->where('certificate', 1)->count();
+
+        //seconds to hours
         $coursesDurationSum = round($userCourses->sum('duration') / 3600);
 
         $coursesStats = [
@@ -40,7 +42,10 @@ class UserController extends Controller
             echo '';
         }
 
-        $xpStats = ['lvl' => $lvl, 'current_xp' => $currentXp, 'xp_to_lvl_up' => $xpToLvlUp];
+        $xpStats = ['lvl' => $lvl,
+                    'current_xp' => $currentXp,
+                    'xp_to_lvl_up' => $xpToLvlUp
+        ];
 
         //get random lecturer that has at least one course viewed by this user
         $randomCourseIndex = rand(0, $coursesTotal-1);
