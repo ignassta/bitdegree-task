@@ -29,7 +29,7 @@
                         <h2>{{ __('Progression') }}</h2>
                         <div id="progression-inner-holder">
                             <img id="progression-award-icon" src="{{ asset('images/golden-award-icon.png') }}" alt="">
-                            <p id="progression-lvl">Level 14</p>
+                            <p id="progression-lvl">Level {{ $lvl }}</p>
                             <p id="progression-xp">235 / 500 XP</p>
                             <div id="progression-rewards-holder">
                                 <img src="{{ asset('images/crown-icon.png') }}" alt="">

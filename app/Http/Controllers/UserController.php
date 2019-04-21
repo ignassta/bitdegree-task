@@ -19,6 +19,12 @@ class UserController extends Controller
         $coursesTotal = $userCourses->count();
         $cerfiticatesTotal = $userCourses->where('certificate', 1)->count();
 
+        //user xp
+        $userXp = $userCourses->sum('xp');
+
+        //corrent user lvl
+        $lvl = floor(sqrt($userXp / 30));
+
         //seconds to hours
         $coursesDurationSum = round($userCourses->sum('duration') / 3600);
 
@@ -34,7 +40,7 @@ class UserController extends Controller
         }
         $userGroups = array_count_values($userGroups);
 
-        //count group completion ratio and merge it with group title in array
+        //count group completion ratio and merge it with group title to array
         $userGroupsWithCompRatio = [];
         foreach ($userGroups as $groupTitle => $finishedCourses) {
             $groupCoursesTotal = $groups->where('title', $groupTitle)->first()->courses->count();
@@ -43,6 +49,6 @@ class UserController extends Controller
         }
 
         return view('index',
-            compact('user','coursesTotal', 'cerfiticatesTotal', 'coursesDurationSum', 'userGroupsWithCompRatio', 'usersRandomLecturer'));
+            compact('user','coursesTotal', 'cerfiticatesTotal', 'coursesDurationSum', 'userGroupsWithCompRatio', 'usersRandomLecturer', 'lvl'));
     }
 }

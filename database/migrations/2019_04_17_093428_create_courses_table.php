@@ -20,6 +20,7 @@ class CreateCoursesTable extends Migration
             $table->text('title')->nullable();
             $table->integer('duration')->nullable();
             $table->boolean('certificate')->nullable();
+            $table->integer('xp')->nullable();
             $table->timestamps();
         });
     }
