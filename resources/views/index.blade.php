@@ -32,10 +32,13 @@
                             <p id="progression-lvl">Level {{ $xpStats['lvl'] }}</p>
                             <p id="progression-xp">{{ $xpStats['current_xp'] }} / {{ $xpStats['xp_to_lvl_up'] }} XP</p>
                             <div id="progression-rewards-holder">
-                                <img src="{{ asset('images/badges/crown-icon.png') }}" alt="">
-                                <img src="{{ asset('images/badges/silver-medal-icon.png') }}" alt="">
-                                <img src="{{ asset('images/badges/bronze-medal-icon.png') }}" alt="">
-                                <img src="{{ asset('images/badges/golden-medal-icon.png') }}" alt="">
+
+                                @foreach($userBadges as $userBadge)
+
+                                    <img title="{{ $userBadge->title }}" src="{{ asset($userBadge->link) }}" alt="">
+
+                                @endforeach
+
                             </div>
                             <h2 id="progression-second-header">{{ __('Mastered On BitDegree') }}</h2>
                             <div class="progress-bar-holder">

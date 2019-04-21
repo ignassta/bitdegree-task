@@ -12,11 +12,11 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $userCourses = $user->courses;
+        $userBadges = $user->badges;
         $groups = Group::all();
 
         $coursesTotal = $userCourses->count();
         $cerfiticatesTotal = $userCourses->where('certificate', 1)->count();
-
         //seconds to hours
         $coursesDurationSum = round($userCourses->sum('duration') / 3600);
 
@@ -68,6 +68,6 @@ class UserController extends Controller
         }
 
         return view('index',
-            compact('user','coursesStats', 'userGroupsWithCompRatio', 'usersRandomLecturer', 'xpStats'));
+            compact('user', 'userBadges', 'coursesStats', 'userGroupsWithCompRatio', 'usersRandomLecturer', 'xpStats'));
     }
 }
