@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Course;
 use App\Group;
-use App\Lecturer;
 use App\User;
-
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -19,11 +16,23 @@ class UserController extends Controller
         $coursesTotal = $userCourses->count();
         $cerfiticatesTotal = $userCourses->where('certificate', 1)->count();
 
-        //user xp
-        $userXp = $userCourses->sum('xp');
+        //define xp base to control xp ratio rise for each lvl
+        define('XP_BASE', 20);
 
-        //corrent user lvl
-        $lvl = floor(sqrt($userXp / 30));
+        //user xp
+        $currentXp = $userCourses->sum('xp');
+
+        //current user lvl
+        $lvl = floor(sqrt($currentXp / XP_BASE));
+
+        //count total xp needed for next lvl
+        $oldLvl = $lvl;
+        $xpToLvlUp = $currentXp;
+        for ($i = floor($oldLvl); $i <= floor($oldLvl+1); $i = sqrt($xpToLvlUp++ / XP_BASE)) {
+            echo '';
+        }
+
+        $xpStats = ['lvl' => $lvl, 'current_xp' => $currentXp, 'xp_to_lvl_up' => $xpToLvlUp];
 
         //seconds to hours
         $coursesDurationSum = round($userCourses->sum('duration') / 3600);
@@ -49,6 +58,6 @@ class UserController extends Controller
         }
 
         return view('index',
-            compact('user','coursesTotal', 'cerfiticatesTotal', 'coursesDurationSum', 'userGroupsWithCompRatio', 'usersRandomLecturer', 'lvl'));
+            compact('user','coursesTotal', 'cerfiticatesTotal', 'coursesDurationSum', 'userGroupsWithCompRatio', 'usersRandomLecturer', 'xpStats'));
     }
 }

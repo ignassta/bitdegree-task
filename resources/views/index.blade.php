@@ -29,8 +29,8 @@
                         <h2>{{ __('Progression') }}</h2>
                         <div id="progression-inner-holder">
                             <img id="progression-award-icon" src="{{ asset('images/golden-award-icon.png') }}" alt="">
-                            <p id="progression-lvl">Level {{ $lvl }}</p>
-                            <p id="progression-xp">235 / 500 XP</p>
+                            <p id="progression-lvl">Level {{ $xpStats['lvl'] }}</p>
+                            <p id="progression-xp">{{ $xpStats['current_xp'] }} / {{ $xpStats['xp_to_lvl_up'] }} XP</p>
                             <div id="progression-rewards-holder">
                                 <img src="{{ asset('images/crown-icon.png') }}" alt="">
                                 <img src="{{ asset('images/silver-medal-icon.png') }}" alt="">
