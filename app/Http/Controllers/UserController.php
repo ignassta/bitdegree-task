@@ -17,6 +17,7 @@ class UserController extends Controller
         $userCourses = $user->courses;
         $groups = Group::all();
         $coursesTotal = $userCourses->count();
+        $cerfiticatesTotal = $userCourses->where('certificate', 1)->count();
 
         //seconds to hours
         $coursesDurationSum = round($userCourses->sum('duration') / 3600);
@@ -25,9 +26,7 @@ class UserController extends Controller
         $randomCourseIndex = rand(0, $coursesTotal-1);
         $usersRandomLecturer = $userCourses[$randomCourseIndex]->lecturer;
 
-//        dd($usersRandomLecturer);
-
-        //sort user courses by course groups
+        //sort user courses by course groups and put it to array
         $userGroups = [];
         foreach ($userCourses as $course)
         {
@@ -44,6 +43,6 @@ class UserController extends Controller
         }
 
         return view('index',
-            compact('user','coursesTotal', 'coursesDurationSum', 'userGroupsWithCompRatio', 'usersRandomLecturer'));
+            compact('user','coursesTotal', 'cerfiticatesTotal', 'coursesDurationSum', 'userGroupsWithCompRatio', 'usersRandomLecturer'));
     }
 }

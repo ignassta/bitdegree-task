@@ -19,6 +19,7 @@ class CreateCoursesTable extends Migration
             $table->unsignedInteger('lecturer_id')->nullable();
             $table->text('title')->nullable();
             $table->integer('duration')->nullable();
+            $table->boolean('certificate')->nullable();
             $table->timestamps();
         });
     }

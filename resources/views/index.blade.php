@@ -10,7 +10,7 @@
         </div>
         <div class="col-lg-4 text-center">
             <img src="{{ asset('images/purple-medal-icon.png') }}" alt="">
-            <div class="top-statistics-count">85</div>
+            <div class="top-statistics-count">{{ $cerfiticatesTotal }}</div>
             <div class="top-statistics-text">{{ __('Certificates Earned') }}</div>
         </div>
         <div class="col-lg-4 text-left">
@@ -83,7 +83,7 @@
                     <div id="featured-certificate-holder" class="column">
                         <div id="certificates-medal-holder">
                             <img id="certificates-medal" src="{{ asset('images/purple-medal-icon.png') }}" alt="">
-                            <div id="certificates-count">18</div>
+                            <div id="certificates-count">{{ $cerfiticatesTotal }}</div>
                         </div>
                         <div id="certificates-count-text">{{ __('Certificates Earned') }}</div>
                         <div id="featured-certificate-header">{{ __('Featured Certificate') }}</div>

@@ -11,6 +11,7 @@ $factory->define(Course::class, function (Faker $faker) {
         'title' => $faker->sentence(1),
         'group_id' => Group::inRandomOrder()->first()->id,
         'lecturer_id' => Lecturer::inRandomOrder()->first()->id,
-        'duration' => $faker->numberBetween($min = 1200, $max = 10800)
+        'duration' => $faker->numberBetween($min = 1200, $max = 10800),
+        'certificate' => rand(0,1)
     ];
 });
