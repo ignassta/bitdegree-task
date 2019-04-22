@@ -96,12 +96,15 @@
                 <div class="col-12">
                     <div id="earned-certificates-holder">
                         <h2 id="earned-certificates-header">{{ __('Certificates Earned') }}</h2>
+
+                        @foreach($certificates as $certificate)
+
                         <div id="earned-certificates-inner-holder" class="row column">
                             <div class="col-2 earned-certificate-left-img-holder d-flex align-items-center justify-content-center">
                                 <img src="{{ asset('images/olive-branches-icon.png') }}" alt="">
                             </div>
                             <div class="col-xl-6 col-10 earned-certificate-title-holder">
-                                <p>Blender Tutorial: How to Master Blender Animation & 3D Game Modeling</p>
+                                <p>{{ $certificate->title }}</p>
                                 <div class="certificate-info">
                                     <span><i class="fa fa-user"></i>{{ $user->name }}</span>
                                     <span><i class="fa fa-calendar"></i>2019-02-10</span>
@@ -122,6 +125,9 @@
                                 </div>
                             </div>
                         </div>
+
+                        @endforeach
+
                         <div class="text-center">
                             <button id="show-all-btn">{{ __('See All Certificates') }}</button>
                         </div>

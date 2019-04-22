@@ -22,14 +22,15 @@ class UserController extends Controller
         $userCourses = $user->courses;
         $userBadges = $user->badges;
         $groups = Group::all();
+        $certificates = $userCourses->where('certificate', 1);
 
         $coursesTotal = $userCourses->count();
-        $cerfiticatesTotal = $userCourses->where('certificate', 1)->count();
+        $certificatesTotal = $certificates->count();
         $coursesDurationSum = $this->userService->secondsToHours($userCourses->sum('duration'));
 
         $coursesStats = [
             'courses_total' => $coursesTotal,
-            'certificates_total' => $cerfiticatesTotal,
+            'certificates_total' => $certificatesTotal,
             'courses_duration_sum' => $coursesDurationSum
         ];
 
@@ -44,6 +45,6 @@ class UserController extends Controller
         $userProgresses = $this->userService->userProgress($userCourses, $groups);
 
         return view('index',
-            compact('user', 'userBadges', 'coursesStats', 'userProgresses', 'usersRandomLecturer', 'xpStats'));
+            compact('user', 'userBadges', 'coursesStats', 'certificates', 'userProgresses', 'usersRandomLecturer', 'xpStats'));
     }
 }
