@@ -10836,7 +10836,7 @@ body #main-container {
 }
 
 #earned-certificates-holder #earned-certificates-inner-holder {
-  margin: 0 0 10px 0;
+  margin: 10px 0;
 }
 
 #earned-certificates-holder .earned-certificate-left-img-holder {
