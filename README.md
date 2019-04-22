@@ -2,6 +2,13 @@
 
 Laravel vue.js user management crud task for junior full-stack developer position
 
+### Live version
+
+bitdegree.i89.lt
+
+Don't mind the security warning. It's shown because there is no SSL certificate for that sub-domain.
+
+
 ### Prerequisites
 
 Make sure that you are using PHP >= 7.1.3
