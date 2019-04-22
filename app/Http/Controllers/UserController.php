@@ -3,11 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Group;
+use App\Services\UserService;
 use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    private $userService;
+
+    public function __construct(UserService $userService)
+    {
+        $this->userService = $userService;
+    }
+
     public function show($id)
     {
         $user = User::findOrFail($id);
@@ -17,8 +25,7 @@ class UserController extends Controller
 
         $coursesTotal = $userCourses->count();
         $cerfiticatesTotal = $userCourses->where('certificate', 1)->count();
-        //seconds to hours
-        $coursesDurationSum = round($userCourses->sum('duration') / 3600);
+        $coursesDurationSum = $this->userService->secondsToHours($userCourses->sum('duration'));
 
         $coursesStats = [
             'courses_total' => $coursesTotal,
@@ -26,48 +33,17 @@ class UserController extends Controller
             'courses_duration_sum' => $coursesDurationSum
         ];
 
-        //define xp base to control xp ratio rise for each lvl
-        define('XP_BASE', 20);
-
-        //user xp
+        //get user xp stats
         $currentXp = $userCourses->sum('xp');
-
-        //current user lvl
-        $lvl = floor(sqrt($currentXp / XP_BASE));
-
-        //count total xp needed for next lvl
-        $oldLvl = $lvl;
-        $xpToLvlUp = $currentXp;
-        for ($i = floor($oldLvl); $i <= floor($oldLvl+1); $i = sqrt($xpToLvlUp++ / XP_BASE)) {
-            echo '';
-        }
-
-        $xpStats = ['lvl' => $lvl,
-                    'current_xp' => $currentXp,
-                    'xp_to_lvl_up' => $xpToLvlUp
-        ];
+        $xpStats = $this->userService->xpStatsCounter($currentXp);
 
         //get random lecturer that has at least one course viewed by this user
-        $randomCourseIndex = rand(0, $coursesTotal-1);
-        $usersRandomLecturer = $userCourses[$randomCourseIndex]->lecturer;
+        $usersRandomLecturer = $this->userService->randomLecturer($coursesTotal, $userCourses);
 
-        //sort user courses by course groups and put it to array
-        $userGroups = [];
-        foreach ($userCourses as $course)
-        {
-            $userGroups[] = $course->group->title;
-        }
-        $userGroups = array_count_values($userGroups);
-
-        //count group completion ratio and merge it with group title to array
-        $userGroupsWithCompRatio = [];
-        foreach ($userGroups as $groupTitle => $finishedCourses) {
-            $groupCoursesTotal = $groups->where('title', $groupTitle)->first()->courses->count();
-            $groupCompletionRatio = round($finishedCourses * 100 / $groupCoursesTotal);
-            $userGroupsWithCompRatio[] = ['group-title' => $groupTitle, 'completion-ratio' => $groupCompletionRatio];
-        }
+        //get user progress info
+        $userProgresses = $this->userService->userProgress($userCourses, $groups);
 
         return view('index',
-            compact('user', 'userBadges', 'coursesStats', 'userGroupsWithCompRatio', 'usersRandomLecturer', 'xpStats'));
+            compact('user', 'userBadges', 'coursesStats', 'userProgresses', 'usersRandomLecturer', 'xpStats'));
     }
 }
