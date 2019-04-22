@@ -99,32 +99,10 @@
 
                         @foreach($certificates as $certificate)
 
-                        <div id="earned-certificates-inner-holder" class="row column">
-                            <div class="col-2 earned-certificate-left-img-holder d-flex align-items-center justify-content-center">
-                                <img src="{{ asset('images/olive-branches-icon.png') }}" alt="">
-                            </div>
-                            <div class="col-xl-6 col-10 earned-certificate-title-holder">
-                                <p>{{ $certificate->title }}</p>
-                                <div class="certificate-info">
-                                    <span><i class="fa fa-user"></i>{{ $user->name }}</span>
-                                    <span><i class="fa fa-calendar"></i>2019-02-10</span>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 download-btn-holder d-flex align-items-center justify-content-end">
-                                <div class="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" class="btn btn-secondary">{{ __('Download') }}</button>
-                                    <button type="button" class="btn btn-secondary"><img src="{{ asset('images/download-icon.png') }}" alt=""></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 download-btn-holder-mob d-flex align-items-center justify-content-center">
-                                <div class="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" class="btn btn-secondary">{{ __('Download') }}</button>
-                                    <button type="button" class="btn btn-secondary"><img src="{{ asset('images/download-icon.png') }}" alt=""></button>
-                                </div>
-                            </div>
-                        </div>
+                            <earned-certificate-component>
+                                <template slot="certificate-title">{{ $certificate->title }}</template>
+                                <template slot="user-name">{{ $user->name }}</template>
+                            </earned-certificate-component>
 
                         @endforeach
 
