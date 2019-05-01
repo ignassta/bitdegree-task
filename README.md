@@ -1,4 +1,4 @@
-# Laravel vue.js crud
+# BitDegree Full Stack Developer Task
 
 Laravel vue.js user management crud task for junior full-stack developer position
 
